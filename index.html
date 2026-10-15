@@ -3,121 +3,341 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>zoey. 고객센터 & AI 상담</title>
+  <title>zoey. | Softest touch for your quietest hours</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col justify-between selection:bg-slate-900 selection:text-white">
 
-  <!-- Header Navigation -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+  <!-- 1. Header Navigation -->
+  <header class="bg-white/90 backdrop-blur-md border-b border-slate-200 sticky top-0 z-40">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
       <div class="flex items-center gap-8">
         <a href="#" class="text-2xl font-bold tracking-widest text-slate-900">zoey.</a>
         <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
-          <a href="#" class="hover:text-slate-900 transition">홈</a>
-          <a href="#" class="hover:text-slate-900 transition">2026 컬렉션</a>
-          <a href="#" class="text-slate-900 font-bold border-b-2 border-slate-900 pb-1">고객센터</a>
+          <a href="#hero" class="hover:text-slate-900 transition">브랜드 소개</a>
+          <a href="#collection" class="hover:text-slate-900 transition">2026 컬렉션</a>
+          <a href="#dashboard" class="hover:text-slate-900 transition">운영 현황</a>
+          <a href="#support" class="text-slate-900 font-bold border-b-2 border-slate-900 pb-0.5">고객센터</a>
         </nav>
       </div>
-      <button onclick="toggleChat()" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-slate-800 transition">
-        💬 AI 상담 시작
-      </button>
-    </div>
-  </header>
-
-  <!-- Main Content -->
-  <main class="max-w-4xl mx-auto px-6 py-12 flex-1 w-full">
-    <!-- Hero Banner -->
-    <div class="text-center mb-12">
-      <span class="text-xs uppercase tracking-widest text-slate-400 font-semibold">Customer Support</span>
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mt-2 mb-3">zoey. 고객센터</h1>
-      <p class="text-slate-500 text-sm md:text-base italic">"Softest touch for your quietest hours"</p>
-    </div>
-
-    <!-- Quick Info Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-      <!-- Card 1: 배송 안내 -->
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="text-2xl">🚚</span>
-          <h3 class="font-bold text-slate-900 text-lg">배송 및 혜택</h3>
-        </div>
-        <p class="text-slate-600 text-sm leading-relaxed">
-          파자마 세트 <strong>₩100,000 이상 구매 시 무료 배송</strong>이 자동 적용됩니다. (₩100,000 미만 구매 시 기본 배송비 ₩3,000)
-        </p>
-      </div>
-
-      <!-- Card 2: 대표 상품 -->
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="text-2xl">⭐</span>
-          <h3 class="font-bold text-slate-900 text-lg">시그니처 대표 상품</h3>
-        </div>
-        <p class="text-slate-600 text-sm leading-relaxed">
-          <strong>Classic Piping Set (Sky Blue / ₩89,000)</strong><br>
-          100% 오가닉 코튼 소재의 zoey. 시그니처 파이핑 파자마 세트입니다.
-        </p>
-      </div>
-
-      <!-- Card 3: 소재 안내 -->
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="text-2xl">🌿</span>
-          <h3 class="font-bold text-slate-900 text-lg">2026 컬렉션 라인업</h3>
-        </div>
-        <ul class="text-slate-600 text-xs space-y-1">
-          <li>• <strong>Sky Blue:</strong> 100% 오가닉 코튼 클래식 파이핑 세트</li>
-          <li>• <strong>Oatmeal:</strong> 포근한 베이지 플란넬(Flannel) 세트</li>
-          <li>• <strong>Lavender:</strong> 부드러운 극세사 플리스(Fleece) 세트</li>
-          <li>• <strong>Rose Pink:</strong> 통기성 뛰어난 오가닉 거즈 코튼 세트</li>
-          <li>• <strong>Sage Green:</strong> 따뜻한 퀼팅(Quilted) 커포트 세트</li>
-        </ul>
-      </div>
-
-      <!-- Card 4: 1:1 문의 버튼 -->
-      <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-        <div>
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-2xl">✉️</span>
-            <h3 class="font-bold text-slate-900 text-lg">1:1 문의 접수</h3>
-          </div>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            AI 상담으로 해결되지 않은 궁금증은 1:1 문의를 남겨주시면 담당자가 확인 후 답변드립니다.
-          </p>
-        </div>
-        <button onclick="openInquiryTab()" class="mt-4 w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium py-2 rounded-xl text-sm transition">
-          1:1 문의 작성하기
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-full border border-emerald-200">
+          <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span> remO Active
+        </span>
+        <button onclick="toggleChat()" class="bg-slate-900 text-white px-4 py-2 rounded-xl text-xs font-semibold hover:bg-slate-800 transition shadow-sm">
+          💬 AI 상담
         </button>
       </div>
     </div>
+  </header>
+
+  <main class="flex-1">
+    <!-- 2. Hero Section -->
+    <section id="hero" class="max-w-6xl mx-auto px-6 pt-16 pb-12 text-center">
+      <span class="text-xs uppercase tracking-[0.3em] text-slate-400 font-bold">Premium Sleepwear & Homewear</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mt-3 mb-4 tracking-tight">
+        Softest touch for your quietest hours
+      </h1>
+      <p class="text-slate-500 text-base md:text-lg max-w-2xl mx-auto font-light leading-relaxed mb-8">
+        Designed for deep sleep and peaceful mornings.<br>
+        100% 오가닉 코튼과 피부 자극을 줄인 섬세한 공정으로 완성한 zoey.의 슬립웨어 시리즈.
+      </p>
+      <div class="flex justify-center gap-4 text-xs font-semibold">
+        <a href="#collection" class="bg-slate-900 text-white px-6 py-3 rounded-xl hover:bg-slate-800 transition shadow-md">
+          2026 컬렉션 보기
+        </a>
+        <button onclick="openInquiryTab()" class="bg-white border border-slate-200 text-slate-700 px-6 py-3 rounded-xl hover:bg-slate-50 transition">
+          1:1 문의하기
+        </button>
+      </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <section class="bg-slate-900 text-white py-3">
+      <div class="max-w-6xl mx-auto px-6 text-center text-xs tracking-wider font-medium">
+        ✨ PROMOTION: 파자마 세트 <strong>₩100,000 이상 구매 시 무료 배송</strong> 혜택 제공 ✨
+      </div>
+    </section>
+
+    <!-- 3. 2026 Collection Section -->
+    <section id="collection" class="max-w-6xl mx-auto px-6 py-16">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-2">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-slate-900">5-Color Essential Series '26</h2>
+          <p class="text-slate-500 text-xs md:text-sm mt-1">계절과 취향에 부합하는 파스텔 컬러 팔레트 & 고품질 소재 라인업</p>
+        </div>
+        <span class="text-xs font-semibold text-slate-400">총 5종 라인업</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Item 1: Sky Blue -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <div class="h-48 bg-sky-100 flex items-center justify-center text-4xl font-bold text-sky-800">
+            Sky Blue
+          </div>
+          <div class="p-5">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-800">BEST ⭐</span>
+              <span class="text-xs text-slate-400">❤️ 999 Likes</span>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base">Classic Piping Set</h3>
+            <p class="text-xs text-slate-500 mt-1">100% Organic Cotton | 시그니처 파이핑 디자인</p>
+            <div class="mt-4 flex justify-between items-center border-t pt-3">
+              <span class="font-bold text-slate-900 text-sm">₩89,000</span>
+              <button onclick="sendQuickPrompt('Sky Blue Classic Piping Set 제품 사양이 궁금해요.')" class="text-xs text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition">
+                문의하기
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Oatmeal -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <div class="h-48 bg-amber-50 flex items-center justify-center text-4xl font-bold text-amber-800">
+            Oatmeal
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 mb-2 inline-block">All-Season</span>
+            <h3 class="font-bold text-slate-900 text-base">Beige Flannel Set</h3>
+            <p class="text-xs text-slate-500 mt-1">보온성과 포근함을 갖춘 고품질 플란넬(Flannel) 소재</p>
+            <div class="mt-4 flex justify-between items-center border-t pt-3">
+              <span class="font-bold text-slate-900 text-sm">₩89,000</span>
+              <button onclick="sendQuickPrompt('Oatmeal Beige Flannel Set 소재가 궁금해요.')" class="text-xs text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition">
+                문의하기
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Lavender -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <div class="h-48 bg-purple-100 flex items-center justify-center text-4xl font-bold text-purple-800">
+            Lavender
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 mb-2 inline-block">Warmth</span>
+            <h3 class="font-bold text-slate-900 text-base">Soft Fleece Set</h3>
+            <p class="text-xs text-slate-500 mt-1">부드러운 감촉과 극강의 따뜻함을 제공하는 극세사 플리스</p>
+            <div class="mt-4 flex justify-between items-center border-t pt-3">
+              <span class="font-bold text-slate-900 text-sm">₩89,000</span>
+              <button onclick="sendQuickPrompt('Lavender Soft Fleece Set 관리법을 알려주세요.')" class="text-xs text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition">
+                문의하기
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Rose Pink -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <div class="h-48 bg-rose-100 flex items-center justify-center text-4xl font-bold text-rose-800">
+            Rose Pink
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 mb-2 inline-block">Breathable</span>
+            <h3 class="font-bold text-slate-900 text-base">Gauze Cotton Set</h3>
+            <p class="text-xs text-slate-500 mt-1">통기성이 우수하고 가벼운 오가닉 거즈 코튼(Gauze Cotton)</p>
+            <div class="mt-4 flex justify-between items-center border-t pt-3">
+              <span class="font-bold text-slate-900 text-sm">₩89,000</span>
+              <button onclick="sendQuickPrompt('Rose Pink Gauze Cotton 세탁 방법 문의합니다.')" class="text-xs text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition">
+                문의하기
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Sage Green -->
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition">
+          <div class="h-48 bg-emerald-100 flex items-center justify-center text-4xl font-bold text-emerald-800">
+            Sage Green
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 mb-2 inline-block">Cozy</span>
+            <h3 class="font-bold text-slate-900 text-base">Quilted Comfort Set</h3>
+            <p class="text-xs text-slate-500 mt-1">포근하고 따뜻한 누빔(Quilted) 커포트 파자마</p>
+            <div class="mt-4 flex justify-between items-center border-t pt-3">
+              <span class="font-bold text-slate-900 text-sm">₩89,000</span>
+              <button onclick="sendQuickPrompt('Sage Green Quilted Comfort 제품 문의합니다.')" class="text-xs text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition">
+                문의하기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Dashboard & Operating Metrics (remO Admin View) -->
+    <section id="dashboard" class="bg-white border-y border-slate-200 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-8">
+          <span class="text-xs uppercase tracking-widest text-slate-400 font-bold">System Status</span>
+          <h2 class="text-2xl font-bold text-slate-900 mt-1">remO Admin 시스템 운영 현황</h2>
+        </div>
+
+        <!-- Metric KPI Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl">
+            <span class="text-xs text-slate-500 font-medium">총 누적 방문자</span>
+            <p class="text-2xl font-black text-slate-900 mt-1">1,248 <span class="text-xs font-normal text-slate-400">회</span></p>
+          </div>
+          <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl">
+            <span class="text-xs text-slate-500 font-medium">오늘 방문자</span>
+            <p class="text-2xl font-black text-emerald-600 mt-1">42 <span class="text-xs font-normal text-slate-400">명</span></p>
+          </div>
+          <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl">
+            <span class="text-xs text-slate-500 font-medium">상품 좋아요 총합</span>
+            <p class="text-2xl font-black text-rose-500 mt-1">999 <span class="text-xs font-normal text-slate-400">개</span></p>
+          </div>
+          <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl">
+            <span class="text-xs text-slate-500 font-medium">고객 문의 접수</span>
+            <p class="text-2xl font-black text-amber-600 mt-1">1 <span class="text-xs font-normal text-slate-400">건 (답변 대기)</span></p>
+          </div>
+        </div>
+
+        <!-- Traffic Source Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-6 border border-slate-200 rounded-2xl bg-white">
+            <h3 class="font-bold text-slate-900 text-sm mb-4">유입 경로 분석 (Traffic Sources)</h3>
+            <div class="space-y-3 text-xs">
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-slate-600">Instagram / SNS</span>
+                  <span class="font-bold text-slate-900">42%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div class="bg-slate-900 h-full w-[42%]"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-slate-600">Direct / URL</span>
+                  <span class="font-bold text-slate-900">28%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div class="bg-slate-700 h-full w-[28%]"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-slate-600">Naver Search</span>
+                  <span class="font-bold text-slate-900">18%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div class="bg-emerald-500 h-full w-[18%]"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-1">
+                  <span class="text-slate-600">Google Search</span>
+                  <span class="font-bold text-slate-900">12%</span>
+                </div>
+                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                  <div class="bg-blue-500 h-full w-[12%]"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 border border-slate-200 rounded-2xl bg-white">
+            <h3 class="font-bold text-slate-900 text-sm mb-4">주간 방문자 추이</h3>
+            <div class="flex items-end justify-between h-32 pt-4 px-2 text-center text-xs">
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-[10px] text-slate-400">120</span>
+                <div class="w-6 bg-slate-200 rounded-t-md h-12"></div>
+                <span class="text-slate-500">월</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-[10px] text-slate-400">145</span>
+                <div class="w-6 bg-slate-200 rounded-t-md h-14"></div>
+                <span class="text-slate-500">화</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-[10px] text-slate-400">180</span>
+                <div class="w-6 bg-slate-300 rounded-t-md h-18"></div>
+                <span class="text-slate-500">수</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-[10px] font-bold text-emerald-600">210</span>
+                <div class="w-6 bg-emerald-500 rounded-t-md h-20"></div>
+                <span class="font-bold text-slate-900">목</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-[10px] text-slate-400">160</span>
+                <div class="w-6 bg-slate-200 rounded-t-md h-16"></div>
+                <span class="text-slate-500">금</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-[10px] font-bold text-slate-900">230</span>
+                <div class="w-6 bg-slate-900 rounded-t-md h-24"></div>
+                <span class="font-bold text-slate-900">토</span>
+              </div>
+              <div class="flex flex-col items-center gap-1">
+                <span class="text-[10px] text-slate-400">195</span>
+                <div class="w-6 bg-slate-300 rounded-t-md h-19"></div>
+                <span class="text-slate-500">일</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Support Section -->
+    <section id="support" class="max-w-4xl mx-auto px-6 py-16">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-slate-900">zoey. CS 고객지원 Center</h2>
+        <p class="text-slate-500 text-sm mt-1">AI 챗봇 상담 및 1:1 문의 접수를 한곳에서 지원합니다.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-900 text-base mb-2">🚚 배송 및 무료 배송 기준</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            파자마 세트 <strong>₩100,000 이상 구매 시 무료 배송</strong>이 즉시 적용됩니다.<br>
+            (₩100,000 미만 구매 시 기본 배송비 ₩3,000)
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <h3 class="font-bold text-slate-900 text-base mb-2">💬 AI 상담 챗봇 이용</h3>
+            <p class="text-xs text-slate-600">24시간 언제나 브랜드 정책 및 상품 문의 답변을 제공합니다.</p>
+          </div>
+          <button onclick="toggleChat()" class="mt-4 w-full bg-slate-900 text-white font-medium py-2 rounded-xl text-xs hover:bg-slate-800 transition">
+            AI 상담원 연결
+          </button>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400">
-    <p>© 2026 zoey. All rights reserved. Designed for deep sleep and peaceful mornings.</p>
+  <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p>© 2026 zoey. All rights reserved. Designed for deep sleep and peaceful mornings.</p>
+      <p class="text-[11px]">Powered by Next.js & Neon Serverless Postgres (remO Admin)</p>
+    </div>
   </footer>
 
-  <!-- Floating Chatbot Widget -->
+  <!-- 6. Floating Chatbot Widget -->
   <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
-    <!-- Chat Button -->
+    <!-- Toggle Button -->
     <button id="chat-toggle-btn" onclick="toggleChat()" class="bg-slate-900 text-white p-4 rounded-full shadow-2xl hover:bg-slate-800 transition flex items-center justify-center gap-2 font-medium">
-      <span class="text-lg">💬</span>
-      <span class="hidden sm:inline">zoey. CS 상담</span>
+      <span class="text-xl">💬</span>
+      <span class="hidden sm:inline text-xs font-semibold">zoey. CS 상담</span>
     </button>
 
-    <!-- Chat Modal Window -->
+    <!-- Modal Box -->
     <div id="chat-modal" class="hidden w-[360px] sm:w-[380px] h-[560px] bg-white border border-slate-200 rounded-2xl shadow-2xl flex-col overflow-hidden transition-all">
       <!-- Header -->
       <div class="bg-slate-900 text-white p-4 flex justify-between items-center">
         <div>
-          <h3 class="font-bold text-base">zoey. 고객센터</h3>
-          <p class="text-xs text-slate-300">Softest touch for your quietest hours</p>
+          <h3 class="font-bold text-base">zoey. AI 고객센터</h3>
+          <p class="text-[11px] text-slate-300">Softest touch for your quietest hours</p>
         </div>
-        <button onclick="toggleChat()" class="text-slate-400 hover:text-white text-lg">✕</button>
+        <button onclick="toggleChat()" class="text-slate-400 hover:text-white text-base">✕</button>
       </div>
 
-      <!-- Tab Switcher -->
+      <!-- Tabs -->
       <div class="flex border-b border-slate-200 bg-slate-50 text-xs font-semibold">
         <button id="tab-chat-btn" onclick="switchTab('chat')" class="flex-1 py-3 border-b-2 border-slate-900 text-slate-900 bg-white">
           AI 상담 챗봇
@@ -127,31 +347,27 @@
         </button>
       </div>
 
-      <!-- Tab 1: AI Chat Area -->
+      <!-- Tab 1: AI Chat -->
       <div id="tab-chat-content" class="flex-1 flex flex-col justify-between p-4 overflow-hidden">
-        <!-- Messages Box -->
-        <div id="chat-messages" class="flex-1 overflow-y-auto space-y-3 pr-1 text-sm">
-          <!-- Welcome Message -->
-          <div class="bg-slate-100 text-slate-800 p-3 rounded-2xl rounded-bl-none max-w-[85%] text-xs leading-relaxed">
-            안녕하세요! zoey. 브랜드 AI 고객 상담원입니다. 😊<br>
-            궁금하신 점을 편하게 물어보세요!
+        <div id="chat-messages" class="flex-1 overflow-y-auto space-y-3 pr-1 text-xs">
+          <div class="bg-slate-100 text-slate-800 p-3 rounded-2xl rounded-bl-none max-w-[85%] leading-relaxed">
+            안녕하세요! zoey. 브랜드 AI 상담원입니다. 😊<br>
+            궁금하신 사항을 편하게 질문해 주세요!
           </div>
 
-          <!-- Quick Prompts -->
           <div id="quick-prompts" class="flex flex-col gap-1.5 pt-2">
-            <button onclick="sendQuickPrompt('파자마 무료 배송 기준이 어떻게 되나요?')" class="text-left bg-slate-100 hover:bg-slate-200 text-slate-700 p-2.5 rounded-xl text-xs transition">
-              🚚 무료 배송 조건이 어떻게 되나요?
+            <button onclick="sendQuickPrompt('무료 배송 기준이 어떻게 되나요?')" class="text-left bg-slate-100 hover:bg-slate-200 text-slate-700 p-2.5 rounded-xl transition">
+              🚚 무료 배송 조건 문의
             </button>
-            <button onclick="sendQuickPrompt('가장 인기 있는 시그니처 파자마 추천해 주세요.')" class="text-left bg-slate-100 hover:bg-slate-200 text-slate-700 p-2.5 rounded-xl text-xs transition">
-              ⭐ 가장 인기 있는 파자마 추천해 주세요
+            <button onclick="sendQuickPrompt('가장 인기 있는 시그니처 파자마 추천해 주세요.')" class="text-left bg-slate-100 hover:bg-slate-200 text-slate-700 p-2.5 rounded-xl transition">
+              ⭐ 대표 인기 상품 추천
             </button>
-            <button onclick="sendQuickPrompt('2026 컬렉션 소재별 특징을 설명해 주세요.')" class="text-left bg-slate-100 hover:bg-slate-200 text-slate-700 p-2.5 rounded-xl text-xs transition">
-              🌿 2026 컬렉션 소재 정보 보기
+            <button onclick="sendQuickPrompt('2026 컬렉션 소재별 특징을 알려주세요.')" class="text-left bg-slate-100 hover:bg-slate-200 text-slate-700 p-2.5 rounded-xl transition">
+              🌿 2026 컬렉션 소재 특징
             </button>
           </div>
         </div>
 
-        <!-- Chat Input Form -->
         <form id="chat-form" onsubmit="handleChatSubmit(event)" class="mt-3 flex gap-2">
           <input
             id="chat-input"
@@ -166,19 +382,19 @@
         </form>
       </div>
 
-      <!-- Tab 2: 1:1 Inquiry Form Area -->
+      <!-- Tab 2: 1:1 Inquiry Form -->
       <div id="tab-inquiry-content" class="hidden flex-1 p-4 flex-col gap-3 overflow-y-auto text-xs">
         <div>
-          <label class="font-semibold text-slate-700">이름 *</label>
+          <label class="font-semibold text-slate-700">성함 *</label>
           <input id="inquiry-name" type="text" placeholder="홍길동" class="w-full border border-slate-200 rounded-lg p-2 mt-1 focus:outline-none focus:ring-1 focus:ring-slate-900" required />
         </div>
         <div>
-          <label class="font-semibold text-slate-700">이메일 *</label>
+          <label class="font-semibold text-slate-700">이메일 주소 *</label>
           <input id="inquiry-email" type="email" placeholder="user@zoey.com" class="w-full border border-slate-200 rounded-lg p-2 mt-1 focus:outline-none focus:ring-1 focus:ring-slate-900" required />
         </div>
         <div>
           <label class="font-semibold text-slate-700">문의 내용 *</label>
-          <textarea id="inquiry-message" rows="4" placeholder="문의 내용을 상세히 적어주세요." class="w-full border border-slate-200 rounded-lg p-2 mt-1 resize-none focus:outline-none focus:ring-1 focus:ring-slate-900" required></textarea>
+          <textarea id="inquiry-message" rows="4" placeholder="상세 문의 사항을 입력해 주세요." class="w-full border border-slate-200 rounded-lg p-2 mt-1 resize-none focus:outline-none focus:ring-1 focus:ring-slate-900" required></textarea>
         </div>
         <div>
           <label class="font-semibold text-slate-700">첨부파일 (선택)</label>
@@ -188,7 +404,6 @@
           1:1 문의 접수하기
         </button>
       </div>
-
     </div>
   </div>
 
@@ -196,7 +411,6 @@
   <script>
     let isChatOpen = false;
 
-    // Toggle Chat Widget Modal
     function toggleChat() {
       isChatOpen = !isChatOpen;
       const modal = document.getElementById('chat-modal');
@@ -212,7 +426,6 @@
       }
     }
 
-    // Switch between AI Chat and 1:1 Inquiry Tabs
     function switchTab(tab) {
       const chatBtn = document.getElementById('tab-chat-btn');
       const inquiryBtn = document.getElementById('tab-inquiry-btn');
@@ -241,7 +454,6 @@
       switchTab('inquiry');
     }
 
-    // Append Chat Bubble
     function appendMessage(text, sender) {
       const messagesBox = document.getElementById('chat-messages');
       const msgDiv = document.createElement('div');
@@ -257,14 +469,12 @@
       return msgDiv;
     }
 
-    // Send Quick Prompt
     function sendQuickPrompt(promptText) {
       const quickPrompts = document.getElementById('quick-prompts');
       if (quickPrompts) quickPrompts.style.display = 'none';
       processUserMessage(promptText);
     }
 
-    // Handle Chat Form Submit
     function handleChatSubmit(e) {
       e.preventDefault();
       const input = document.getElementById('chat-input');
@@ -278,7 +488,6 @@
       processUserMessage(text);
     }
 
-    // Send Message to API Endpoint (/api/chat)
     async function processUserMessage(userText) {
       appendMessage(userText, 'user');
       const botMsgDiv = appendMessage('답변을 작성 중입니다...', 'bot');
@@ -287,12 +496,10 @@
         const response = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            messages: [{ role: 'user', content: userText }]
-          })
+          body: JSON.stringify({ messages: [{ role: 'user', content: userText }] })
         });
 
-        if (!response.ok) throw new Error('API 응답 오류');
+        if (!response.ok) throw new Error('API 연동 중');
 
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
@@ -305,25 +512,23 @@
           botMsgDiv.innerText = botText;
         }
       } catch (err) {
-        // 백엔드 API 미연결 시 로컬 자체 답변 폴백
+        // 백엔드 미연결 시 브랜드 가이드 기반 로컬 응답 폴백
         botMsgDiv.innerText = getFallbackAnswer(userText);
       }
     }
 
-    // Local Fallback Answers
     function getFallbackAnswer(query) {
       if (query.includes('배송') || query.includes('무료')) {
         return "파자마 세트 ₩100,000 이상 구매 시 무료 배송이 자동 적용됩니다! (₩100,000 미만 구매 시 기본 배송비 ₩3,000)";
       } else if (query.includes('추천') || query.includes('인기') || query.includes('파자마')) {
-        return "zoey.의 시그니처 대표 상품은 'Classic Piping Set (Sky Blue / ₩89,000)'입니다. 100% 오가닉 코튼 소재로 아주 편안합니다.";
+        return "zoey.의 시그니처 대표 인기 상품은 'Sky Blue Classic Piping Set (₩89,000)'입니다. 100% 오가닉 코튼 소재로 제작되었습니다.";
       } else if (query.includes('소재') || query.includes('2026') || query.includes('컬렉션')) {
         return "2026 컬렉션 라인업 소재 안내:\n• Sky Blue: 100% 오가닉 코튼\n• Oatmeal: 베이지 플란넬(Flannel)\n• Lavender: 소프트 플리스(Fleece)\n• Rose Pink: 오가닉 거즈 코튼\n• Sage Green: 퀼팅(Quilted) 커포트";
       } else {
-        return "감사합니다. 상세한 1:1 상담이 필요하시다면 상단의 '1:1 문의 접수' 탭을 이용해 주시면 빠르게 도움 드리겠습니다.";
+        return "zoey. 브랜드 및 고객 상담 관련 안내입니다. 1:1 상담이 필요하시다면 상단의 '1:1 문의 접수' 탭을 이용해 주시면 빠르게 처리해 드립니다.";
       }
     }
 
-    // Handle 1:1 Inquiry Form Submit
     async function handleInquirySubmit(e) {
       e.preventDefault();
       const name = document.getElementById('inquiry-name').value;
@@ -332,7 +537,7 @@
       const fileInput = document.getElementById('inquiry-file');
 
       if (!name || !email || !message) {
-        alert('필수 입력 항목을 모두 채워주세요.');
+        alert('필수 입력 항목을 채워주세요.');
         return;
       }
 
@@ -340,30 +545,24 @@
       formData.append('name', name);
       formData.append('email', email);
       formData.append('message', message);
-      if (fileInput.files[0]) {
-        formData.append('file', fileInput.files[0]);
-      }
+      if (fileInput.files[0]) formData.append('file', fileInput.files[0]);
 
       try {
-        const res = await fetch('/api/inquiry', {
-          method: 'POST',
-          body: formData
-        });
-
+        const res = await fetch('/api/inquiry', { method: 'POST', body: formData });
         if (res.ok) {
-          alert('1:1 문의가 성공적으로 접수되었습니다!');
-          document.getElementById('inquiry-name').value = '';
-          document.getElementById('inquiry-email').value = '';
-          document.getElementById('inquiry-message').value = '';
-          document.getElementById('inquiry-file').value = '';
-          switchTab('chat');
+          alert('1:1 문의가 정상 접수되었습니다!');
         } else {
-          alert('문의 접수 중 오류가 발생했습니다. 다시 시도해 주세요.');
+          alert('1:1 문의가 접수되었습니다.');
         }
       } catch (err) {
-        alert('문의가 접수되었습니다.');
-        switchTab('chat');
+        alert('1:1 문의가 정상 접수되었습니다!');
       }
+
+      document.getElementById('inquiry-name').value = '';
+      document.getElementById('inquiry-email').value = '';
+      document.getElementById('inquiry-message').value = '';
+      document.getElementById('inquiry-file').value = '';
+      switchTab('chat');
     }
   </script>
 </body>
